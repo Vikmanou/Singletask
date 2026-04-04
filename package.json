@@ -1,7 +1,9 @@
 {
 	"name": "burnt-tomato",
 	"private": true,
-	"version": "0.0.0",
+	"version": "1.0.0",
+	"description": "A minimal Pomodoro timer desktop app built with React and Electron.",
+	"author": "vikmanou",
 	"type": "module",
 	"main": "electron/main.cjs",
 	"icon": "public/logo.ico",

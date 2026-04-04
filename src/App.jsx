@@ -17,7 +17,7 @@ function App() {
 		return localStorage.getItem('burnt-tomato-theme') || 'void'
 	})
 
-	const isElectron = typeof window !== 'undefined' && !!window.electronApp?.toggleAlwaysOnTop
+	const isElectron = typeof window !== 'undefined' && !!window.electronApp?.isElectron
 	const [isPinned, setIsPinned] = useState(false)
 
 	const handlePin = useCallback(async () => {
