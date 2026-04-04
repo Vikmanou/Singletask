@@ -4,6 +4,7 @@ import { useTimer } from './hooks/useTimer'
 import { useKeyboardShortcuts } from './hooks/useKeyboardShortcuts'
 import Timer from './components/Timer'
 import ThemeSwitcher from './components/ThemeSwitcher'
+import PinButton from './components/PinButton'
 import './App.css'
 
 function App() {
@@ -15,6 +16,15 @@ function App() {
 	const [theme, setTheme] = useState(() => {
 		return localStorage.getItem('burnt-tomato-theme') || 'void'
 	})
+
+	const isElectron = typeof window !== 'undefined' && !!window.electronApp?.toggleAlwaysOnTop
+	const [isPinned, setIsPinned] = useState(false)
+
+	const handlePin = useCallback(async () => {
+		if (!isElectron) return
+		const next = await window.electronApp.toggleAlwaysOnTop()
+		setIsPinned(next)
+	}, [isElectron])
 
 	useEffect(() => {
 		document.documentElement.setAttribute('data-theme', theme)
@@ -63,6 +73,9 @@ function App() {
 				theme={theme}
 				onCycle={cycleTheme}
 			/>
+			{isElectron && (
+				<PinButton isPinned={isPinned} onToggle={handlePin} />
+			)}
 		</div>
 	)
 }

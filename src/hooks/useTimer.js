@@ -11,7 +11,6 @@ export function useTimer(initialMinutes = 25) {
 	const [totalDuration, setTotalDuration] = useState(0)
 	const [isFinished, setIsFinished] = useState(false)
 
-	// Countdown
 	useEffect(() => {
 		if (!isRunning) return
 
@@ -22,7 +21,6 @@ export function useTimer(initialMinutes = 25) {
 		return () => clearInterval(id)
 	}, [isRunning])
 
-	// Pause timer (counts up while paused)
 	useEffect(() => {
 		if (!hasPaused || isRunning) return
 
@@ -33,7 +31,6 @@ export function useTimer(initialMinutes = 25) {
 		return () => clearInterval(id)
 	}, [hasPaused, isRunning])
 
-	// Completion
 	useEffect(() => {
 		if (timeLeft === 0 && isRunning) {
 			setIsRunning(false)
