@@ -9,7 +9,7 @@ function createWindow() {
 		height: 720,
 		minWidth: 300,
 		minHeight: 400,
-		title: 'Burnt Tomato',
+		title: 'Singletask',
 		icon: path.join(__dirname, isDev ? '../public/logo.png' : '../dist/logo.png'),
 		autoHideMenuBar: true,
 		webPreferences: {

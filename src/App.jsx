@@ -14,7 +14,7 @@ function App() {
 	} = useTimer()
 
 	const [theme, setTheme] = useState(() => {
-		return localStorage.getItem('burnt-tomato-theme') || 'void'
+		return localStorage.getItem('singletask-theme') || 'void'
 	})
 
 	const isElectron = typeof window !== 'undefined' && !!window.electronApp?.isElectron
@@ -28,16 +28,16 @@ function App() {
 
 	useEffect(() => {
 		document.documentElement.setAttribute('data-theme', theme)
-		localStorage.setItem('burnt-tomato-theme', theme)
+		localStorage.setItem('singletask-theme', theme)
 	}, [theme])
 
 	useEffect(() => {
 		if (isRunning || hasPaused) {
 			const m = String(Math.floor(timeLeft / 60)).padStart(2, '0')
 			const s = String(timeLeft % 60).padStart(2, '0')
-			document.title = `${m}:${s} - Burnt Tomato`
+			document.title = `${m}:${s} - Singletask`
 		} else {
-			document.title = 'Burnt Tomato'
+			document.title = 'Singletask'
 		}
 	}, [timeLeft, isRunning, hasPaused])
 

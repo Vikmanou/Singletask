@@ -41,7 +41,7 @@ export function useTimer(initialMinutes = 25) {
 			alarmAudio.currentTime = 0
 			alarmAudio.play().catch(() => { })
 			if ('Notification' in window && Notification.permission === 'granted') {
-				new Notification('Burnt Tomato', {
+				new Notification('Singletask', {
 					body: 'Time is up!',
 				})
 			}

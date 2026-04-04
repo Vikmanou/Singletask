@@ -1,5 +1,5 @@
 {
-	"name": "burnt-tomato",
+	"name": "singletask",
 	"private": true,
 	"version": "1.0.0",
 	"description": "A minimal Pomodoro timer desktop app built with React and Electron.",
@@ -15,11 +15,11 @@
 		"electron:dev": "concurrently -k \"vite\" \"wait-on http://localhost:8080 && cross-env ELECTRON_ENV=development electron .\"",
 		"electron:preview": "vite build && electron .",
 		"electron:build": "vite build && electron-builder",
-		"electron:build:packager": "vite build && electron-packager . \"Burnt Tomato\" --platform=win32 --arch=x64 --out=release --overwrite --icon=public/logo.ico --ignore=node_modules --ignore=src --ignore=public --ignore=release --ignore=electron/preload.cjs"
+		"electron:build:packager": "vite build && electron-packager . \"Singletask\" --platform=win32 --arch=x64 --out=release --overwrite --icon=public/logo.ico --ignore=node_modules --ignore=src --ignore=public --ignore=release --ignore=electron/preload.cjs"
 	},
 	"build": {
-		"appId": "com.burnttomato.app",
-		"productName": "Burnt Tomato",
+		"appId": "com.singletask.app",
+		"productName": "Singletask",
 		"icon": "public/logo.png",
 		"directories": {
 			"output": "release"
