@@ -1,5 +1,7 @@
 import { useState, useEffect, useCallback } from 'react'
-import { playAlarm } from '../utils/alarm'
+import alarmSrc from '../assets/alarm.mp3'
+
+const alarmAudio = new Audio(alarmSrc)
 
 export function useTimer(initialMinutes = 25) {
 	const [timeLeft, setTimeLeft] = useState(initialMinutes * 60)
@@ -39,7 +41,8 @@ export function useTimer(initialMinutes = 25) {
 			setPausedElapsed(0)
 			setTotalDuration(0)
 			setIsFinished(true)
-			playAlarm()
+			alarmAudio.currentTime = 0
+			alarmAudio.play()
 			if ('Notification' in window && Notification.permission === 'granted') {
 				new Notification('Burnt Tomato', {
 					body: 'Time is up!',
