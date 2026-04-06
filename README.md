@@ -1,7 +1,7 @@
 # Singletask
 
 [![GitHub release (latest by date)](https://img.shields.io/github/v/release/vikmanou/singletask?style=flat-square&color=FF5F5F&label=Download)](https://github.com/vikmanou/singletask/releases/latest)
-[![Live Demo](https://img.shields.io/badge/Live%20Demo-GitHub%20Pages-blue?style=flat-square)](https://vikmanou.github.io/singletask)
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-GitHub%20Pages-blue?style=flat-square)](https://vikmanou.github.io/Singletask)
 [![License](https://img.shields.io/github/license/vikmanou/singletask?style=flat-square)](LICENSE)
 
 A minimal, distraction-free Pomodoro timer — available as a desktop app and in the browser.
